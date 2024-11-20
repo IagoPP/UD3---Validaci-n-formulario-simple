@@ -40,9 +40,9 @@ public class ActionController implements ActionListener {
             ) {
             
             JOptionPane.showMessageDialog(null, "Formulario enviado con éxito ");
-            viewPaintFrame.nameField.setVisible(false);
-            viewPaintFrame.emailField.setVisible(false);
-            viewPaintFrame.passField.setVisible(false);
+            viewPaintFrame.nameField.setText("");
+            viewPaintFrame.emailField.setText("");
+            viewPaintFrame.passField.setText("");
         }
 
         viewPaintFrame.pack();
