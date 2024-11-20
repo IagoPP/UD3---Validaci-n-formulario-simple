@@ -18,15 +18,34 @@ public class ActionController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (viewPaintFrame.nameField.getText()!=null &&
-            viewPaintFrame.emailFieldField.getText().matches(regex) &&
+        
+        if (viewPaintFrame.nameField.getText().length()==0) {
+            viewPaintFrame.nameError.setText("Este campo es obligatorio");
+        }else{
+            viewPaintFrame.nameError.setText("");
+        }
+        if (!viewPaintFrame.emailField.getText().matches(regex)) {
+            viewPaintFrame.emailError.setText("Email no reconocido");
+        }else{
+            viewPaintFrame.emailError.setText("");
+        }
+        if (viewPaintFrame.passField.getText().length()<8) {
+            viewPaintFrame.passError.setText("La contraseña debe de tener al menos 8 caracteres");
+        }else{
+            viewPaintFrame.passError.setText("");
+        }
+
+        if (viewPaintFrame.nameField.getText().length()!=0 &&
+            viewPaintFrame.emailField.getText().matches(regex) &&
             viewPaintFrame.passField.getText().length()>=8
             ) {
             
-            
+            JOptionPane.showMessageDialog(null, "Formulario enviado con éxito ");
+            viewPaintFrame.nameField.setText("");
+            viewPaintFrame.emailField.setText("");
+            viewPaintFrame.passField.setText("");
         }
 
-     /*    String edad = JOptionPane.showInputDialog("Ingresa tu edad:");
-        JOptionPane.showMessageDialog(null, "Tu edad es: " + edad); */
+        viewPaintFrame.pack();
     }
 }
