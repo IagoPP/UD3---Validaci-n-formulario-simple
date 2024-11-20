@@ -1,5 +1,6 @@
 package FormularioSimple;
 
+import java.awt.Insets;
 import java.awt.event.*;
 
 import javax.swing.JOptionPane;
@@ -7,6 +8,8 @@ import javax.swing.JOptionPane;
 public class ActionController implements ActionListener {
     PaintFrame viewPaintFrame;
     String regex = "([a-z]|[A-Z]|[0-9])+@([a-z]|[0-9])+.(net|es|com|org|info|biz|name|edu|gov)";
+    Insets errorInsets = new Insets(5, 0, 10, 0);
+    Insets errorInsetsDisplayed = new Insets(5, 0, 15, 0);
 
     public ActionController(PaintFrame vPaint) {
         viewPaintFrame = vPaint;
@@ -21,8 +24,10 @@ public class ActionController implements ActionListener {
         
         if (viewPaintFrame.nameField.getText().length()==0) {
             viewPaintFrame.nameError.setText("Este campo es obligatorio");
+            viewPaintFrame.panelConfig(errorInsetsDisplayed);
         }else{
             viewPaintFrame.nameError.setText("");
+            viewPaintFrame.panelConfig(errorInsets);
         }
         if (!viewPaintFrame.emailField.getText().matches(regex)) {
             viewPaintFrame.emailError.setText("Email no reconocido");

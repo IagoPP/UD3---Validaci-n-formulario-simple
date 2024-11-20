@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-                PaintFrame ventanaPintada=new PaintFrame();
+        PaintFrame ventanaPintada = new PaintFrame();
 
-                ventanaPintada.setVisible(true);
+        ventanaPintada.setVisible(true);
     }
 }

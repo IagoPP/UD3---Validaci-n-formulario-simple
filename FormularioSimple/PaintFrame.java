@@ -37,16 +37,17 @@ public class PaintFrame extends JFrame {
 
     GridBagConstraints c = new GridBagConstraints();
     Color grey = new Color(112, 110, 110);
+    Insets errorInsets = new Insets(5, 0, 10, 0);
 
     public PaintFrame() {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        panelConfig();
+        panelConfig(errorInsets);
         this.getContentPane().add(panel);
         this.pack();
     }
 
-    public void panelConfig() {
+    public void panelConfig(Insets eInsets) {
         panel.setLayout(new GridBagLayout());
         panel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
@@ -90,7 +91,7 @@ public class PaintFrame extends JFrame {
         c.gridy = 2;
         c.gridheight = 1;
         c.gridwidth = 2;
-        c.insets = new Insets(5, 0, 10, 0);
+        c.insets = eInsets;
 
         panel.add(nameError, c);
 
@@ -117,7 +118,7 @@ public class PaintFrame extends JFrame {
         c.gridy = 4;
         c.gridheight = 1;
         c.gridwidth = 2;
-        c.insets = new Insets(5, 0, 10, 0);
+        c.insets = eInsets;
 
         panel.add(emailError, c);
 
@@ -145,7 +146,7 @@ public class PaintFrame extends JFrame {
         c.gridy = 6;
         c.gridheight = 1;
         c.gridwidth = 2;
-        c.insets = new Insets(5, 0, 10, 0);
+        c.insets = eInsets;
 
         panel.add(passError, c);
 
