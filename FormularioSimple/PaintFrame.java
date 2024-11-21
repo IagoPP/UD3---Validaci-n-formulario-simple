@@ -23,8 +23,6 @@ public class PaintFrame extends JFrame {
     private void centerFrame(Dimension size){ //Este es un método que hice para centrar la ventana justo en el medio de la pantalla, util cuando el JFrame no tiene unas dimensiones predefinidas por ti
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
 
-        System.out.println(pantalla.width + " y " + pantalla.height);
-
         int ancho = pantalla.width/2 - (int)size.getWidth()/2;
         int alto = pantalla.height/2 - (int)size.getHeight()/2;
 
