@@ -89,7 +89,6 @@ public class PaintFrame extends JFrame {
 
         panel.add(nameLabel, c);
 
-        nameField.setAlignmentX(RIGHT_ALIGNMENT);
         c.fill = GridBagConstraints.BOTH;
         c.gridx = 1;
         c.gridy = 1;
